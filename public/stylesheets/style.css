@@ -1,5 +1,6 @@
 html{
-	max_width: 100%;
+	max_width: 100vw;
+	background-color: #363636;
 }
 
 body {
@@ -14,12 +15,14 @@ body {
 
 ul{
 	display: grid;
-	justify-content: center
+	justify-content: center;
+	overflow-y: scroll;
+	max-height: 70vh;
 }
 
 h1{
 	display: flex;
-	justify-content: center
+	justify-content: center;
 }
 
 button {
@@ -29,4 +32,11 @@ button {
 
 a {
 	color: #00B7FF;
+}
+
+#output {
+	overflow-y: scroll;
+	max-height: 70vh;
+	background-color: black;
+	padding: 10px;
 }
