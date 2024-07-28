@@ -2,8 +2,8 @@ extends layout
 
 block content
 	script(type="text/javascript").
-		var fetchy = async function(cmd,ip){
-			await fetch("http://"+ip+":3000/run_script",{
+		var fetchy = async function(cmd,ip,port){
+			await fetch("http://"+ip+":"+port+"/run_script",{
 				method: "POST",
 				body: JSON.stringify({
 				"Script": cmd
@@ -23,7 +23,7 @@ block content
 		h1 Available Scripts
 		ul
 			each dir in dirs
-				button(onclick= 'fetchy(\'#{dir}\',\'#{ip}\')')= dir
+				button(onclick= 'fetchy(\'#{dir}\',\'#{ip}\',\'#{port}\')')= dir
 				br
 
 block output
