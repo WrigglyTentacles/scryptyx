@@ -1,0 +1,13 @@
+extends layout
+
+script.
+	var fetchy = function(){
+		console.log('Testing')
+	}
+
+block content
+	h1 Available Scripts
+	ul
+		each dir in dirs
+			button(onclick='fetchy')= dir
+			br
