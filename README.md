@@ -10,4 +10,4 @@ I am running an nginx front for it to get ssl. I am protecting that nginx instan
 - Change the .env to use your desired port/ip to run this on.
 - npm run start
 
-### Stack used npm, expressjs, standard javascript, html, css, linux, bash
+### Stack uses npm, expressjs, standard javascript, html, css, linux, bash
