@@ -15,8 +15,15 @@ block content
 			.then(response => response.json())
 			.then((data) => {
 				console.log(data);
+				const initial = document.getElementById('output');
+				initial.textContent="";
 				const doc = document.getElementById('output');
-				doc.textContent=data;
+				for(let i=0;i<data.length;i++){
+					var newel = document.createElement("p");
+					var newtext = document.createTextNode(data[i]);
+					newel.appendChild(newtext);
+					doc.appendChild(newel);
+				}
 			})
 		}
 	div
@@ -29,6 +36,6 @@ block content
 block output
 	div
 		h1 output
-		div
-			p(id="output") No Output
+		div(id="output")
+			p(id="initialtext") No Output
 
