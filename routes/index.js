@@ -13,4 +13,17 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/run_script', function(req, res, next){
+	const script = req.body.Script;
+	console.log("Script to run: "+script);
+	 var added = encodeURIComponent('?CommandComplete=True');
+	exec('scripts/'+script, function(err,stdout,stderr){
+		data = stdout.trim(' ').split('\n');
+		console.log(data);
+		res.send(data);
+	});
+	//res.redirect('/'+added);
+	//res.send("good");
+});
+
 module.exports = router;
