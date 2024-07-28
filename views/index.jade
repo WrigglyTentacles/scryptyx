@@ -1,13 +1,21 @@
 extends layout
 
-script.
-	var fetchy = function(){
-		console.log('Testing')
-	}
 
 block content
+	script(type="text/javascript").
+		var fetchy = async function(cmd){
+			await fetch("http://localhost:3000/run_script",{
+				method: "POST",
+				body: JSON.stringify({
+				"Script": cmd
+			  }),
+			  headers: {
+				"Content-type": "application/json; charset=UTF-8"
+			  }
+			}).then(response => console.log(response.json()))
+		}
 	h1 Available Scripts
 	ul
 		each dir in dirs
-			button(onclick='fetchy')= dir
+			button(onclick= 'fetchy(\'#{dir}\')')= dir
 			br
