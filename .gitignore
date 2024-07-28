@@ -1,6 +1,6 @@
 ## Application ##
-scripts/*
-#.env
+#scripts/*
+.env
 
 ### Node ###
 # Logs
